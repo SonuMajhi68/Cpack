@@ -1,9 +1,9 @@
 import bpy
 
 
-class CPK_MU_Side_Bar(bpy.types.Panel):
+class CPK_PT_Panel(bpy.types.Panel):
     bl_label = "CPack"
-    bl_idname = "Cpack_PT_Panel"
+    bl_idname = "CPK_PT_Panel"
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'UI'
     bl_category = "CPack"
@@ -23,6 +23,10 @@ class CPK_MU_Side_Bar(bpy.types.Panel):
         row.use_property_split = True
         row.use_property_decorate = False
         row.prop(user_input, "method")
+
+        # tex = bpy.data.textures['.hidden']
+        # col = layout.box().column()
+        # col.template_preview(tex)
 
 #        row = layout.row()
 #        row.use_property_split = True

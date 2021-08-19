@@ -2,12 +2,12 @@ import bpy
 from bpy.props import PointerProperty
 
 from .input_class import CPK_MU_User_Input
-from .Side_bar_menu import CPK_MU_Side_Bar
+from .side_bar_panel import CPK_PT_Panel
 
 
 classes = (
     CPK_MU_User_Input,
-    CPK_MU_Side_Bar,
+    CPK_PT_Panel,
 )
 
 
