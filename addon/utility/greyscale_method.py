@@ -10,7 +10,7 @@ def lumaMethod(px, img):
     return value
 
 
-def desaturation(px, img):
+def desaturatMethod(px, img):
     value = (max(img[px], img[px + 1], img[px + 2]) +
              min(img[px], img[px + 1], img[px + 2])) / 2
     return value
