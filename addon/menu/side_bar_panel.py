@@ -24,9 +24,6 @@ class CPK_PT_Panel(bpy.types.Panel):
         row.use_property_decorate = False
         row.prop(user_input, "method")
 
-        # tex = bpy.data.textures['.hidden']
-        # col = layout.box().column()
-        # col.template_preview(tex)
 
 #        row = layout.row()
 #        row.use_property_split = True
@@ -34,9 +31,7 @@ class CPK_PT_Panel(bpy.types.Panel):
 #        row.prop(mytool, "outputPath")
 
         row = layout.box()
-        if not user_input.red and not user_input.green and not user_input.blue and not user_input.alpha:
-            row.active = False
-        row.operator("object.generate_map")
+        row.operator("cpk.generate_map")
 
         row = layout.row(align=True)
         row.prop(user_input, "red", text="Red", toggle=True)
