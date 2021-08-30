@@ -40,6 +40,7 @@ class CPK_OP_Generate_Map(bpy.types.Operator):
     def execute(self, context):
 
         from ..utility.image_processing import (validateImage, generatePixel)
+        from time import time
 
         u_input = context.scene.cpk_user_props
         imgData = bpy.data.images
@@ -59,6 +60,8 @@ class CPK_OP_Generate_Map(bpy.types.Operator):
             imgRef = imgData.load(u_input.alphaTextPath)
             imgs.append(imgRef)
 
+        t0 = time()
+
         if validateImage(imgs):
             width, height = imgs[0].size
 
@@ -69,5 +72,9 @@ class CPK_OP_Generate_Map(bpy.types.Operator):
 
         if not validateImage(imgs):
             self.report({'Error'}, 'Printing report to Info window.')
+
+        print("Time spent: %s seconds" % (time() - t0))
+        # print("Time spent: %S seconds" % ((datetime.now() - t0).total_seconds))
+        # print(datetime.now().strftime("%S") - t0.strftime("%S"))
 
         return {'FINISHED'}
